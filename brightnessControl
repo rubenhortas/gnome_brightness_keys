@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Arguments
+way="$1" # Up or Down
+
+
+if [ $1 == "up" ]
+then
+	$(dbus-send --session --print-reply --dest=org.gnome.SettingsDaemon /org/gnome/SettingsDaemon/Power org.gnome.SettingsDaemon.Power.Screen.StepUp >> /dev/null)
+else
+	if [ $1  == "down" ] 
+	then
+		$(dbus-send --session --print-reply --dest=org.gnome.SettingsDaemon /org/gnome/SettingsDaemon/Power org.gnome.SettingsDaemon.Power.Screen.StepDown >> /dev/null)
+	else
+		echo "Wrong option. Only 'up' and 'down' accepted."
+		path="/home/ruben"
+		cmd=$(ls $path)
+		echo $cmd
+	fi
+fi
+
+

@@ -13,9 +13,6 @@ else
 		$(dbus-send --session --print-reply --dest=org.gnome.SettingsDaemon /org/gnome/SettingsDaemon/Power org.gnome.SettingsDaemon.Power.Screen.StepDown >> /dev/null)
 	else
 		echo "Wrong option. Only 'up' and 'down' accepted."
-		path="/home/ruben"
-		cmd=$(ls $path)
-		echo $cmd
 	fi
 fi
 
